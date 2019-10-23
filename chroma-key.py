@@ -3,7 +3,7 @@ import numpy as np
 import math
 from matplotlib import pyplot as plt
 
-TAM_JANELA = 10
+TAM_JANELA = 30
 SOMA_MAX = math.pow(TAM_JANELA * 2 + 1, 2) * 255
 
 
@@ -14,7 +14,7 @@ SOMA_MAX = math.pow(TAM_JANELA * 2 + 1, 2) * 255
 
 
 def is_out_of_bound(img, i, j, tam):
-    return (i + tam> img.shape[1] or i - tam < 0) or (j + tam> img.shape[0] or j - tam < 0)
+    return (i + tam> img.shape[0] or i - tam < 0) or (j + tam> img.shape[1] or j - tam < 0)
 
 
 def define_peso(img, img_fundo, img_objeto):
@@ -46,11 +46,11 @@ def define_peso(img, img_fundo, img_objeto):
 
 
 
-entrada = "img/0.bmp"
+# entrada = "img/0.bmp"
 # entrada = "img/1.bmp"
 # entrada = "img/2.bmp"
 # entrada = "img/3.bmp"
-# entrada = "img/4.bmp"
+entrada = "img/4.bmp"
 # entrada = "img/5.bmp"
 # entrada = "img/6.bmp"
 # entrada = "img/7.bmp"
@@ -70,7 +70,6 @@ mask = cv2.inRange(imgHSV, lower_green, upper_green)
 mask = cv2.bitwise_not(mask)
 
 mask2 = cv2.inRange(imgHSV, lower_green, upper_green2)
-mask2 = cv2.bitwise_not(mask2)
 
 final_mask = cv2.addWeighted(mask, 1, mask2, 0.5, 0)
 
