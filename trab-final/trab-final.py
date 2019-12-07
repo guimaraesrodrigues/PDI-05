@@ -93,6 +93,13 @@ detalhe = np.uint8(detalhe)
 base = np.uint8(base)
 input = np.uint8(input)
 
+cv2.imshow("imagem_ampliada.bmp", imagem_ampliada)
+cv2.imshow("detalhe_ampliado.bmp", detalhe_ampliado)
+cv2.imshow("base_ampliada.bmp", base_ampliada)
+cv2.imshow("detalhe.bmp", detalhe)
+cv2.imshow("base.bmp", base)
+cv2.imshow("input.bmp", input)
+
 cv2.imshow("imagem_ampliada", imagem_ampliada)
 cv2.imshow("detalhe_ampliado", detalhe_ampliado)
 cv2.imshow("base_ampliada", base_ampliada)
